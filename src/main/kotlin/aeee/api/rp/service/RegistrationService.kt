@@ -15,10 +15,10 @@ class RegistrationService(
     , private val userService: UserService
 ) {
 
-    fun getPublickeyCredentailCreationOption(userName: String, userVerificationRequirement: UserVerificationRequirement): RegistrationPKCCOResponse{
-        val relyingParty = publicKeyCredentialCreationConfig.publicKeyCredentialRpEntity
-        //Session에 저장
+    fun getPublickeyCredentailCreationOption(rpId: String, userName: String, userVerificationRequirement: UserVerificationRequirement): RegistrationPKCCOResponse{
+        val relyingParty = publicKeyCredentialCreationConfig.publicKeyCredentialRpEntity(rpId)
 
+        //Session에 저장
         val challenge = publicKeyCredentialCreationOptionUtil.getChallenge(userVerificationRequirement)
         val user = userService.loadUserByUsername(userName)
 

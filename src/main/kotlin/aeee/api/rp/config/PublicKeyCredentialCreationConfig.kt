@@ -19,6 +19,6 @@ class PublicKeyCredentialCreationConfig {
     var registrationExtensions = AuthenticationExtensionsClientInputs<RegistrationExtensionClientInput<*>>()
     var authenticationExtensions = AuthenticationExtensionsClientInputs<AuthenticationExtensionClientInput<*>>()
 
-    val publicKeyCredentialRpEntity get() = PublicKeyCredentialRpEntity(rpId, rpName, rpIcon)
+    fun publicKeyCredentialRpEntity(rpId: String = this.rpId) = PublicKeyCredentialRpEntity(rpId, rpName, rpIcon)
 
 }
