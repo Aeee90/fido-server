@@ -1,7 +1,10 @@
 package aeee.api.rp.util
 
+import aeee.api.rp.config.PublicKeyCredentialCreationConfig
 import com.webauthn4j.converter.util.CborConverter
 import com.webauthn4j.converter.util.JsonConverter
+import com.webauthn4j.data.PublicKeyCredentialParameters
+import com.webauthn4j.data.PublicKeyCredentialRpEntity
 import com.webauthn4j.data.UserVerificationRequirement
 import com.webauthn4j.data.client.challenge.Challenge
 import com.webauthn4j.data.client.challenge.DefaultChallenge

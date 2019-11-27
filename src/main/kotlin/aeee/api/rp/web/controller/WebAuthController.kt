@@ -1,30 +1,29 @@
 package aeee.api.rp.web.controller
 
-import org.springframework.http.HttpRequest
-import org.springframework.http.server.ServerHttpRequest
-import org.springframework.web.HttpRequestHandler
+import aeee.api.rp.dto.RegistrationPKCCOResponse
+import aeee.api.rp.service.RegistrationService
+import com.webauthn4j.data.UserVerificationRequirement
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/webauth")
-class WebAuthController {
+class WebAuthController(
+    private val registrationService: RegistrationService
+) {
 
 
     @GetMapping("/credential/{user-name}")
     fun makeCredential(
-        request: HttpRequest
-        , @PathVariable("user-name") userName: String
-        , @RequestParam("attType") attType: String
-        , @RequestParam("authType") authType: String
-        , @RequestParam("userVerification") userVerification: String
-        , @RequestParam("residentKeyRequirement") residentKeyRequirement: Boolean
-        , @RequestParam("txAuthExtension") txAuthExtension: String
-    ){
+        @PathVariable("user-name") userName: String
+//        , @RequestParam("attType") attType: String
+//        , @RequestParam("authType") authType: String
+//        , @RequestParam("userVerification") userVerification: UserVerificationRequirement
+//        , @RequestParam("residentKeyRequirement") residentKeyRequirement: Boolean
+//        , @RequestParam("txAuthExtension") txAuthExtension: String
+    ): RegistrationPKCCOResponse {
+
+        return registrationService.getPublickeyCredentailCreationOption(userName, UserVerificationRequirement.REQUIRED)
     }
 
-    @GetMapping("/test")
-    fun test(request: ServerHttpRequest) {
-        println(request.uri)
-    }
 
 }
