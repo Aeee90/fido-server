@@ -15,7 +15,7 @@ class RegistrationService(
     , private val userService: UserService
 ) {
 
-    fun getPublickeyCredentailCreationOption(rpId: String, userName: String, userVerificationRequirement: UserVerificationRequirement): RegistrationPKCCOResponse{
+    fun getPublicKeyCredentailCreationOption(rpId: String, userName: String, userVerificationRequirement: UserVerificationRequirement): RegistrationPKCCOResponse{
         val relyingParty = publicKeyCredentialCreationConfig.publicKeyCredentialRpEntity(rpId)
 
         //Session에 저장

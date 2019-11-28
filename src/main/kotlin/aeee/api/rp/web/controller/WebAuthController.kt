@@ -16,13 +16,13 @@ class WebAuthController(
     fun makeCredential(
         request: ServerHttpRequest
         , @PathVariable("user-name") userName: String
-        , @RequestParam("attType") attType: String
-        , @RequestParam("authType") authType: String
-        , @RequestParam("userVerification") userVerification: UserVerificationRequirement
-        , @RequestParam("residentKeyRequirement") residentKeyRequirement: Boolean
-        , @RequestParam("txAuthExtension") txAuthExtension: String
+//        , @RequestParam("attType") attType: String
+//        , @RequestParam("authType") authType: String
+//        , @RequestParam("userVerification") userVerification: UserVerificationRequirement
+//        , @RequestParam("residentKeyRequirement") residentKeyRequirement: Boolean
+//        , @RequestParam("txAuthExtension") txAuthExtension: String
     ): RegistrationPKCCOResponse {
-        return registrationService.getPublickeyCredentailCreationOption(request.uri.host, userName, UserVerificationRequirement.REQUIRED)
+        return registrationService.getPublicKeyCredentailCreationOption(request.uri.host, userName, UserVerificationRequirement.REQUIRED)
     }
 
 

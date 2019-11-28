@@ -16,11 +16,12 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-webflux")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+	compile("org.jetbrains.kotlin:kotlin-reflect")
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+
+	compile("org.springframework.boot:spring-boot-starter-webflux")
+	compile("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 	compile("com.webauthn4j:webauthn4j-core:0.9.14.RELEASE")
 
