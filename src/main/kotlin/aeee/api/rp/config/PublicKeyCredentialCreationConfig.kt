@@ -6,6 +6,10 @@ import com.webauthn4j.data.extension.client.AuthenticationExtensionClientInput
 import com.webauthn4j.data.extension.client.AuthenticationExtensionsClientInputs
 import com.webauthn4j.data.extension.client.RegistrationExtensionClientInput
 import org.springframework.context.annotation.Configuration
+import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer
+import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer
 
 @Configuration
 class PublicKeyCredentialCreationConfig {
@@ -20,5 +24,4 @@ class PublicKeyCredentialCreationConfig {
     var authenticationExtensions = AuthenticationExtensionsClientInputs<AuthenticationExtensionClientInput<*>>()
 
     fun publicKeyCredentialRpEntity(rpId: String = this.rpId) = PublicKeyCredentialRpEntity(rpId, rpName, rpIcon)
-
 }

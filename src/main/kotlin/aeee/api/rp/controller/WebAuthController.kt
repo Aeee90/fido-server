@@ -1,4 +1,4 @@
-package aeee.api.rp.web.controller
+package aeee.api.rp.controller
 
 import aeee.api.rp.dto.RegistrationPKCCOResponse
 import aeee.api.rp.service.RegistrationService
